@@ -18,8 +18,7 @@ app.post('/search', function(req, res) {
   console.log("Searching now!");
   client.search({
     term: 'restaurants',
-    latitude: req.body.latitude,
-    longitude: req.body.longitude,
+    location: req.body.address,
     open_now: true,
     sort_by: 'rating',
     limit: 3,

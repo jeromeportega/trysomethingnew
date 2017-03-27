@@ -6,14 +6,21 @@
 </div>
 <div class='container' style='text-align: center'>
   <div class='row fullscreen-bg'>
-    <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+    <video loop muted autoplay playsinline class="fullscreen-bg__video">
       <source src="../images/wine.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
     </video>
   </div>
   <div class='row'>
     <div class='col-md-8 col-md-offset-2 descripMove'>
       <h3 id='descripText' class='animated fadeInDown'>Find the top three restaurants near you.  Anywhere, anytime.</h3>
-      <a href='#!/results' class='btn btn-primary btn-lg animated fadeInUp' id='buttonMods'>Begin Search</a>
+      <h4 id='descripText' class='animated fadeIn'>Enter your current street address to get started.</h4>
+      <form ng-submit='saveAddress()'>
+        <input type='number' ng-model='address.number' placeholder='Number' />
+        <input type='text' ng-model='address.name' placeholder='Street Name' />
+        <input type='text' ng-model='address.city' placeholder='City' />
+        <input type='number' ng-model='address.zip' placeholder='Zip Code' />
+        <input type='submit' class='btn btn-primary btn-lg animated fadeInUp' id='buttonMods' value='Begin Search' />
+      </form>
     </div>
   </div>
 </div>
