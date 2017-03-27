@@ -1,0 +1,31 @@
+<div class='container-fluid' style='background-color: #003749'>
+  <a href='#'>
+    <img src='../images/mainLogo2.png' alt='' class='branding'/>
+  </a>
+</div>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-2 col-md-offset-10 animated fadeIn' style='text-align: right'>
+      <a href='http://www.yelp.com'><img src='../images/Yelp_trademark_RGB_outline.png' alt="" class='img-responsive' /></a>
+    </div>
+  </div>
+</div>
+<div class='container'>
+  <div ngIf='$scope.results'>
+    <div class='row' style='text-align: center'>
+      <div ng-repeat='result in results'>
+        <div class='col-md-4 animated fadeInUp'>
+          <a href="#!/navigate/{{ result.id }}"><img class='restImg img-circle' src='{{ result.image_url }}' /></a>
+          <h3 class='resultNames'>
+            {{ result.name }}
+          </h3>
+          <h4 class='typeOfFood'>
+            <div ng-repeat='item in result.categories'>
+              {{ item.title }}
+            </div>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
